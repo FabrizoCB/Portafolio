@@ -45,7 +45,7 @@ interface Language {
                 @if (edu.logo) {
                   <div class="edu-logo-wrapper">
                     <div class="edu-logo-glow" [style.background-color]="edu.color"></div>
-                    <div class="edu-logo-container">
+                    <div class="edu-logo-container" [style.box-shadow]="'0 0 0 3px ' + edu.color + '30, 0 4px 15px rgba(0,0,0,0.3)'">
                       <img 
                         [src]="edu.logo" 
                         [alt]="edu.institution"
@@ -137,69 +137,64 @@ interface Language {
     
     .edu-logo-wrapper {
       position: relative;
-      width: 72px;
-      height: 72px;
+      width: 70px;
+      height: 70px;
       flex-shrink: 0;
     }
     
     .edu-logo-glow {
       position: absolute;
-      inset: -2px;
-      border-radius: 18px;
-      opacity: 0.3;
-      filter: blur(8px);
+      inset: -3px;
+      border-radius: 50%;
+      opacity: 0.25;
+      filter: blur(10px);
       transition: all 0.4s ease;
     }
     
     .education-card:hover .edu-logo-glow {
-      opacity: 0.6;
-      filter: blur(12px);
+      opacity: 0.5;
+      filter: blur(15px);
     }
     
     .edu-logo-container {
       position: relative;
       width: 100%;
       height: 100%;
-      border-radius: 16px;
+      border-radius: 50%;
       overflow: hidden;
-      background: linear-gradient(145deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255,255,255,0.1);
+      background: white;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 8px;
+      padding: 4px;
       transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
       box-shadow: 
-        0 4px 6px -1px rgba(0,0,0,0.1),
-        0 2px 4px -2px rgba(0,0,0,0.1),
-        inset 0 1px 0 rgba(255,255,255,0.1);
+        0 0 0 3px rgba(255,255,255,0.1),
+        0 4px 15px rgba(0,0,0,0.3);
     }
     
     .education-card:hover .edu-logo-container {
-      transform: translateY(-4px) scale(1.05);
-      border-color: rgba(255,255,255,0.2);
+      transform: translateY(-3px) scale(1.08);
       box-shadow: 
-        0 20px 25px -5px rgba(0,0,0,0.2),
-        0 8px 10px -6px rgba(0,0,0,0.1),
-        inset 0 1px 0 rgba(255,255,255,0.15);
+        0 0 0 4px rgba(255,255,255,0.15),
+        0 12px 30px rgba(0,0,0,0.4);
     }
     
     .edu-logo-img {
-      width: 100%;
-      height: 100%;
+      width: 90%;
+      height: 90%;
       object-fit: contain;
+      border-radius: 50%;
       transition: all 0.4s ease;
-      filter: contrast(1.05);
     }
     
     .education-card:hover .edu-logo-img {
-      transform: scale(1.08);
+      transform: scale(1.1);
     }
     
     @keyframes subtleFloat {
       0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-3px); }
+      50% { transform: translateY(-4px); }
     }
     
     .gsap-edu-card:nth-child(1) .edu-logo-container {
