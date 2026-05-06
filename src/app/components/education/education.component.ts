@@ -230,7 +230,7 @@ export class EducationComponent {
       institution: 'I.E. Domingo Faustino Sarmiento',
       degree: 'Educación Secundaria',
       status: 'Completado',
-      logo: 'assets/images/logo_colegio_sarmiento.jpg',
+      logo: 'assets/images/logo_sarmiento3.jfif',
       color: '#8B5CF6'
     }
   ];
