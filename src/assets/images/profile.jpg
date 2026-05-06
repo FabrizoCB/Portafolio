@@ -1,0 +1,15 @@
+/* 
+ * PLACEHOLDER PARA FOTO DE PERFIL
+ * 
+ * Instrucciones:
+ * 1. Reemplazar este archivo con tu foto de perfil real
+ * 2. La foto debe ser cuadrada (recomendado 500x500px o mayor)
+ * 3. Formatos aceptados: .jpg, .png, .webp
+ * 4. El CSS ya está configurado para mostrarla circular con borde animado
+ * 
+ * La imagen se muestra en:
+ * - Hero section (lado derecho)
+ * - Con borde gradiente animado que rota
+ * - Efecto glow detrás
+ * - Hover scale suave
+ */
