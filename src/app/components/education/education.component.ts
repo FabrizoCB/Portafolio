@@ -37,19 +37,22 @@ interface Language {
           <div class="lg:col-span-2 space-y-6">
             @for (edu of educationList; track edu.institution; let i = $index) {
               <div 
-                class="education-card glass rounded-2xl p-6 flex items-start gap-4 transition-all duration-300 hover:scale-[1.02] gsap-edu-card"
+                class="education-card glass rounded-2xl p-5 flex items-center gap-5 transition-all duration-300 hover:scale-[1.02] gsap-edu-card"
                 appReveal
                 [revealAnimation]="i % 2 === 0 ? 'slide-left' : 'slide-right'"
                 [revealDelay]="i * 100"
               >
                 @if (edu.logo) {
-                  <div class="edu-logo-container w-16 h-16 rounded-xl overflow-hidden shrink-0 bg-white/5 flex items-center justify-center p-2 border border-[var(--border-color)]">
-                    <img 
-                      [src]="edu.logo" 
-                      [alt]="edu.institution"
-                      class="w-full h-full object-contain gsap-edu-logo"
-                      loading="lazy"
-                    />
+                  <div class="edu-logo-wrapper">
+                    <div class="edu-logo-glow" [style.background-color]="edu.color"></div>
+                    <div class="edu-logo-container">
+                      <img 
+                        [src]="edu.logo" 
+                        [alt]="edu.institution"
+                        class="edu-logo-img"
+                        loading="lazy"
+                      />
+                    </div>
                   </div>
                 } @else {
                   <div 
@@ -132,45 +135,83 @@ interface Language {
       box-shadow: 0 10px 30px -10px rgba(99, 102, 241, 0.2);
     }
     
+    .edu-logo-wrapper {
+      position: relative;
+      width: 72px;
+      height: 72px;
+      flex-shrink: 0;
+    }
+    
+    .edu-logo-glow {
+      position: absolute;
+      inset: -2px;
+      border-radius: 18px;
+      opacity: 0.3;
+      filter: blur(8px);
+      transition: all 0.4s ease;
+    }
+    
+    .education-card:hover .edu-logo-glow {
+      opacity: 0.6;
+      filter: blur(12px);
+    }
+    
     .edu-logo-container {
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(6, 182, 212, 0.1) 100%);
+      position: relative;
+      width: 100%;
+      height: 100%;
+      border-radius: 16px;
+      overflow: hidden;
+      background: linear-gradient(145deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px;
+      transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+      box-shadow: 
+        0 4px 6px -1px rgba(0,0,0,0.1),
+        0 2px 4px -2px rgba(0,0,0,0.1),
+        inset 0 1px 0 rgba(255,255,255,0.1);
     }
     
-    .edu-logo-container:hover {
-      transform: scale(1.1) rotate(5deg);
-      box-shadow: 0 8px 25px -5px rgba(99, 102, 241, 0.3);
-      border-color: var(--primary);
+    .education-card:hover .edu-logo-container {
+      transform: translateY(-4px) scale(1.05);
+      border-color: rgba(255,255,255,0.2);
+      box-shadow: 
+        0 20px 25px -5px rgba(0,0,0,0.2),
+        0 8px 10px -6px rgba(0,0,0,0.1),
+        inset 0 1px 0 rgba(255,255,255,0.15);
     }
     
-    .edu-logo-container img {
-      filter: grayscale(20%);
-      transition: filter 0.3s ease;
+    .edu-logo-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      transition: all 0.4s ease;
+      filter: contrast(1.05);
     }
     
-    .edu-logo-container:hover img {
-      filter: grayscale(0%);
+    .education-card:hover .edu-logo-img {
+      transform: scale(1.08);
     }
     
-    @keyframes floatLogo {
+    @keyframes subtleFloat {
       0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-5px); }
+      50% { transform: translateY(-3px); }
     }
     
-    .gsap-edu-logo {
-      animation: floatLogo 3s ease-in-out infinite;
+    .gsap-edu-card:nth-child(1) .edu-logo-container {
+      animation: subtleFloat 4s ease-in-out infinite;
     }
     
-    .gsap-edu-card:nth-child(1) .gsap-edu-logo {
-      animation-delay: 0s;
+    .gsap-edu-card:nth-child(2) .edu-logo-container {
+      animation: subtleFloat 4s ease-in-out infinite 0.6s;
     }
     
-    .gsap-edu-card:nth-child(2) .gsap-edu-logo {
-      animation-delay: 0.5s;
-    }
-    
-    .gsap-edu-card:nth-child(3) .gsap-edu-logo {
-      animation-delay: 1s;
+    .gsap-edu-card:nth-child(3) .edu-logo-container {
+      animation: subtleFloat 4s ease-in-out infinite 1.2s;
     }
   `]
 })
