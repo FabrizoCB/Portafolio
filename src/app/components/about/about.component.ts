@@ -79,7 +79,7 @@ import { RevealDirective } from '../../directives/reveal.directive';
           <div appReveal revealAnimation="fade-right">
             <div class="space-y-6">
               <p class="text-lg text-[var(--text-secondary)] leading-relaxed">
-                Estudiante de <span class="text-[var(--primary)] font-semibold">9.° ciclo de Ingeniería de Sistemas</span> en la Universidad Privada del Norte (UPN). Joven apasionado por el desarrollo de software con ganas de aprender y crecer profesionalmente.
+                Estudiante de <span class="text-[var(--primary)] font-semibold">10.° ciclo de Ingeniería de Sistemas</span> en la Universidad Privada del Norte (UPN). Joven apasionado por el desarrollo de software con ganas de aprender y crecer profesionalmente.
               </p>
               
               <p class="text-lg text-[var(--text-secondary)] leading-relaxed">
