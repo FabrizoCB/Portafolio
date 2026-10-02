@@ -128,11 +128,11 @@ export class SkillsComponent {
   
   skills: Record<string, Skill[]> = {
     frontend: [
-      { name: 'HTML5', icon: '🌐', level: 'Básico', progress: 65, color: '#E34F26' },
+      { name: 'HTML5', icon: '🌐', level: 'Básico', progress: 35, color: '#E34F26' },
       { name: 'JavaScript', icon: '📜', level: 'Intermedio', progress: 75, color: '#F7DF1E' },
       { name: 'React', icon: '⚛️', level: 'Intermedio', progress: 70, color: '#61DAFB' },
-      { name: 'React Native', icon: '📱', level: 'Intermedio', progress: 65, color: '#61DAFB' },
-      { name: 'Angular', icon: '🅰️', level: 'Intermedio', progress: 75, color: '#DD0031' },
+      { name: 'React Native', icon: '📱', level: 'Básico', progress: 40, color: '#61DAFB' },
+      { name: 'Angular', icon: '🅰️', level: 'Básico', progress: 15, color: '#DD0031' },
       { name: 'TailwindCSS', icon: '🎨', level: 'Intermedio', progress: 70, color: '#06B6D4' }
     ],
     backend: [
@@ -140,7 +140,9 @@ export class SkillsComponent {
       { name: 'Flask', icon: '🌶️', level: 'Intermedio', progress: 75, color: '#000000' },
       { name: 'Java', icon: '☕', level: 'Básico', progress: 50, color: '#007396' },
       { name: 'C#', icon: '🔷', level: 'Básico', progress: 45, color: '#239120' },
-      { name: 'APIs RESTful', icon: '🔌', level: 'Intermedio', progress: 70, color: '#6366F1' }
+      { name: 'APIs RESTful', icon: '🔌', level: 'Intermedio', progress: 70, color: '#6366F1' },
+      { name: 'Node.js', icon: '🟢', level: 'Básico', progress: 50, color: '#339933' },
+      { name: 'Express', icon: '🚂', level: 'Básico', progress: 50, color: '#888888' },
     ],
     database: [
       { name: 'SQL', icon: '🗃️', level: 'Básico', progress: 60, color: '#4479A1' },
@@ -149,12 +151,11 @@ export class SkillsComponent {
     ],
     mobile: [
       { name: 'Android Studio', icon: '🤖', level: 'Intermedio', progress: 65, color: '#3DDC84' },
-      { name: 'React Native', icon: '📱', level: 'Intermedio', progress: 65, color: '#61DAFB' }
+      { name: 'React Native', icon: '📱', level: 'Básico', progress: 65, color: '#61DAFB' },
+      { name: 'PostgreSQL', icon: '🐘', level: 'Básico', progress: 50, color: '#4169E1' },
     ],
     tools: [
-      { name: 'Git / GitHub', icon: '🌿', level: 'Intermedio', progress: 70, color: '#F05032' },
-      { name: 'Metodologías Ágiles', icon: '🔄', level: 'Intermedio', progress: 65, color: '#6366F1' },
-      { name: 'Scrum', icon: '📋', level: 'Intermedio', progress: 60, color: '#06B6D4' }
+      { name: 'Git / GitHub', icon: '🌿', level: 'Intermedio', progress: 70, color: '#F05032' }
     ]
   };
   

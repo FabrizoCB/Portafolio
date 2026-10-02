@@ -72,14 +72,6 @@ interface Project {
                 <div class="absolute inset-0 bg-gradient-to-t from-[var(--bg-primary)]/90 via-[var(--bg-primary)]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6">
                   <div class="flex gap-3">
                     <a 
-                      [href]="project.demoUrl"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      class="px-4 py-2 rounded-lg bg-white/10 backdrop-blur-sm text-white text-sm font-medium hover:bg-white/20 transition-colors"
-                    >
-                      Ver Demo
-                    </a>
-                    <a 
                       [href]="project.codeUrl"
                       target="_blank"
                       rel="noopener noreferrer"
@@ -142,71 +134,41 @@ interface Project {
 })
 export class ProjectsComponent {
   activeFilter = 'Todos';
-  filters = ['Todos', 'Web', 'Mobile', 'Full Stack', 'API'];
+  filters = ['Todos', 'Web', 'API'];
   
   projects: Project[] = [
     {
-      title: 'Plataforma E-commerce',
-      category: 'Full Stack',
-      description: 'Plataforma completa de comercio electrónico con gestión de productos, carrito de compras y pasarela de pagos.',
+      title: 'Helpdesk System',
+      category: 'API',
+      description: 'API REST para gestión de tickets de soporte técnico con autenticación JWT, roles (usuario, técnico, admin) y validación de datos. En desarrollo.',
       image: '',
-      tech: ['React', 'Flask', 'MongoDB', 'TailwindCSS'],
-      demoUrl: '#',
-      codeUrl: '#',
+      tech: ['Node.js', 'Express', 'PostgreSQL', 'Prisma', 'JWT'],
+      demoUrl: '',
+      codeUrl: 'https://github.com/FabrizoCB/helpdesk-system',
       color: '#6366F1'
     },
     {
-      title: 'App Móvil de Hábitos',
-      category: 'Mobile',
-      description: 'Aplicación móvil para seguimiento de hábitos alimenticios y nutrición personalizada.',
-      image: '',
-      tech: ['React Native', 'Android Studio', 'Node.js'],
-      demoUrl: '#',
-      codeUrl: '#',
-      color: '#06B6D4'
-    },
-    {
-      title: 'API RESTful Inventario',
+      title: 'API Flask',
       category: 'API',
-      description: 'API completa para gestión de inventario con autenticación, CRUD y reportes.',
+      description: 'API REST en Python con Flask, organizada en capas: controladores, lógica de negocio y acceso a datos.',
       image: '',
-      tech: ['Python', 'Flask', 'MongoDB', 'JWT'],
-      demoUrl: '#',
-      codeUrl: '#',
+      tech: ['Python', 'Flask'],
+      demoUrl: '',
+      codeUrl: 'https://github.com/FabrizoCB/APIFlask',
       color: '#8B5CF6'
     },
     {
-      title: 'Dashboard Administrativo',
+      title: 'Portafolio Personal',
       category: 'Web',
-      description: 'Panel de administración moderno con visualización de datos en tiempo real.',
+      description: 'Este portafolio: sitio responsive con modo claro/oscuro y animaciones, construido con componentes standalone de Angular.',
       image: '',
-      tech: ['Angular', 'TailwindCSS', 'Chart.js', 'TypeScript'],
-      demoUrl: '#',
-      codeUrl: '#',
-      color: '#F59E0B'
-    },
-    {
-      title: 'Sistema de Punto de Venta',
-      category: 'Full Stack',
-      description: 'Sistema POS completo con gestión de ventas, inventario y reportes financieros.',
-      image: '',
-      tech: ['React', 'Node.js', 'MongoDB', 'Express'],
-      demoUrl: '#',
-      codeUrl: '#',
-      color: '#10B981'
-    },
-    {
-      title: 'Landing Page Corporativa',
-      category: 'Web',
-      description: 'Página de aterrizaje moderna y responsive para empresa tecnológica.',
-      image: '',
-      tech: ['HTML5', 'CSS3', 'JavaScript', 'GSAP'],
-      demoUrl: '#',
-      codeUrl: '#',
-      color: '#EC4899'
+      tech: ['Angular', 'TypeScript', 'TailwindCSS'],
+      demoUrl: '',
+      codeUrl: 'https://github.com/FabrizoCB/Portafolio',
+      color: '#06B6D4'
     }
   ];
-  
+
   get filteredProjects(): Project[] {
     if (this.activeFilter === 'Todos') {
       return this.projects;
