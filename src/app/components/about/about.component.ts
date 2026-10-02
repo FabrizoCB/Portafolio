@@ -48,11 +48,11 @@ import { RevealDirective } from '../../directives/reveal.directive';
                 </div>
                 <div class="code-line">
                   <span class="line-number">4</span>
-                  <span class="code-text">  <span class="property">education</span>: <span class="string">'9° ciclo UPN'</span>,</span>
+                  <span class="code-text">  <span class="property">education</span>: <span class="string">'10° ciclo UPN'</span>,</span>
                 </div>
                 <div class="code-line">
                   <span class="line-number">5</span>
-                  <span class="code-text">  <span class="property">skills</span>: [<span class="string">'React'</span>, <span class="string">'Angular'</span>],</span>
+                  <span class="code-text">  <span class="property">skills</span>: [<span class="string">'Python'</span>, <span class="string">'Flask'</span>, <span class="string">'React'</span>],</span>
                 </div>
                 <div class="code-line">
                   <span class="line-number">6</span>
@@ -261,9 +261,9 @@ export class AboutComponent {
   ];
   
   stats = [
-    { value: 9, label: 'Ciclos Académicos' },
+    { value: 10, label: 'Ciclos Académicos' },
     { value: 10, label: 'Tecnologías' },
-    { value: 2, label: 'Años Experiencia' },
-    { value: 5, label: 'Proyectos' }
+    { value: 10, label: 'Meses Experiencia' },
+    { value: 3, label: 'Proyectos' }
   ];
 }
